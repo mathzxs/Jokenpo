@@ -6,8 +6,7 @@ const getPlayerChoice = () => {
   let player = prompt('Rock, paper, or scissors?').toLowerCase().trim();
   while (!['scissors', 'rock', 'paper'].includes(player)) {
     if (player === null) {
-      prompt ('You have quit the game.');
-      return player;
+      return  prompt ('You have quit the game.');
     }
     player = prompt('Invalid choice. Rock, paper, or scissors?').toLowerCase().trim();
   }
