@@ -5,7 +5,7 @@ const displayRound = (roundNum) => {
 const getPlayerChoice = () => {
   let player = prompt('Rock, paper, or scissors?').toLowerCase().trim();
   while (!['scissors', 'rock', 'paper'].includes(player)) {
-    if (player === null) {
+    if (player === false) {
       prompt ('You have quit the game.');
       return player;
     }
