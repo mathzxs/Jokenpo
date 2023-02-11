@@ -87,5 +87,6 @@ const jokenpo = () => {
     console.clear();
     const rounds = 5;
     playGame(rounds);
-    playAgain = window.
+    playAgain = window
+  }
 };
