@@ -6,7 +6,8 @@ const getPlayerChoice = () => {
   let player = prompt('Rock, paper, or scissors?').toLowerCase().trim();
   while (!['scissors', 'rock', 'paper'].includes(player)) {
     if (player === null) {
-      return  prompt ('You have quit the game.');
+      console.log('You have quit the game.');
+      return player;
     }
     player = prompt('Invalid choice. Rock, paper, or scissors?').toLowerCase().trim();
   }
@@ -87,4 +88,3 @@ const jokenpo = () => {
     const rounds = 5;
     playGame(rounds);
     playAgain = window.
-};
