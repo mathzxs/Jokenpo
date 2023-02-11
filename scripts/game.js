@@ -88,3 +88,4 @@ const jokenpo = () => {
     const rounds = 5;
     playGame(rounds);
     playAgain = window.
+};
