@@ -5,6 +5,10 @@ const displayRound = (roundNum) => {
 const getPlayerChoice = () => {
   let player = prompt('Rock, paper, or scissors?').toLowerCase().trim();
   while (!['scissors', 'rock', 'paper'].includes(player)) {
+    if (player === null) {
+      console.log('You have quit the game.');
+      return player;
+    }
     player = prompt('Invalid choice. Rock, paper, or scissors?').toLowerCase().trim();
   }
   return player;
@@ -17,6 +21,9 @@ const getComputerChoice = () => {
 const playRound = (roundNum) => {
   displayRound(roundNum);
   const player = getPlayerChoice();
+  if (player === null) {
+    return null;
+  }
   const computer = getComputerChoice();
   console.log(`You played ${player} and the computer played ${computer}.`);
   if (player === computer) {
@@ -59,6 +66,9 @@ const playGame = (rounds) => {
   let ties = 0;
   for (let i = 0; i < rounds; i++) {
     const result = playRound(i + 1);
+    if (result === null) {
+      return;
+    }
     if (result === 1) {
       wins++;
     } else if (result === -1) {
@@ -77,8 +87,4 @@ const jokenpo = () => {
     console.clear();
     const rounds = 5;
     playGame(rounds);
-    playAgain = window.confirm('Do you want to play again?');
-  }
-};
-
-jokenpo();
+    playAgain = window.
